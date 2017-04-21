@@ -2,7 +2,7 @@ import test from 'tape';
 import deepFreeze from 'deep-freeze';
 import { addToCart, addToNewCart } from '../js/immutability';
 
-test('addToCart()', assert => {
+test('addToCart()', (assert) => {
     const msg = 'addToCart() should add a new item to the cart.';
     const originalCart = {
         items: []
@@ -25,7 +25,7 @@ test('addToCart()', assert => {
     assert.end();
 });
 
-test('addToNewCart()', assert => {
+test('addToNewCart()', (assert) => {
     const msg = 'addToNewCart() should add a new item to the cart.';
     const originalCart = {
         items: []

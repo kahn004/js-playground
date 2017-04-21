@@ -1,7 +1,7 @@
 import test from 'tape';
-import { getSecret, secret, partialApply, addX } from '../js/closure';
+import { getSecret, secret, partialApply } from '../js/closure';
 
-test('Closure for object privacy.', assert => {
+test('Closure for object privacy.', (assert) => {
     const msg = '.get() should have acces to the closure.';
     const expected = 1;
     const obj = getSecret(1);
@@ -19,7 +19,7 @@ test('Closure for object privacy.', assert => {
     assert.end();
 });
 
-test('secret', assert => {
+test('secret', (assert) => {
     const msg = 'secret() should return a function that returns the passed secret';
 
     const theSecret = 'Closures are easy.';
@@ -32,7 +32,7 @@ test('secret', assert => {
     assert.end();
 });
 
-test('add10', assert => {
+test('add10', (assert) => {
     const msg = 'partialApply() should partially apply functions.';
 
     const add = (a, b) => a + b;

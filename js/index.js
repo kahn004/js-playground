@@ -6,20 +6,23 @@ murderRobot = driver + killer
 murderRobotDog = driver + killer + barker
 */
 
-const barker = (state) => ({
+const barker = state => ({
     bark: () => console.log(`Woof, I am ${state.name}!`)
 });
 
-const driver = (state) => ({
-    drive: () => state.position = state.position + state.speed
+const driver = state => ({
+    drive: () => {
+        const newState = Object.assign({}, state, { position: state.position + state.speed });
+        return newState;
+    }
 });
 
-const killer = (state) => ({
+const killer = state => ({
     kill: () => console.log(`I'm a killer called ${state.name}!`)
 });
 
 const murderRobotDog = (name) => {
-    let state = {
+    const state = {
         name,
         speed: 100,
         position: 0
